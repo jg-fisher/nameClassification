@@ -1,2 +1,2 @@
 # nameClassification
-Neural network given a name attempts to classify the country of origin, either China, Russia or USA.
+Vanilla neural network built with Pytorch. Given a name attempts to classify the country of origin as China, Russia, or USA.
