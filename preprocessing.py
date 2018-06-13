@@ -54,6 +54,8 @@ def process_data():
         for int_value in word:
             ohe[index][int_value] = 1
 
+    X = ohe
+
     # shuffle data
     X, Y = shuffle(X, Y, random_state=0)
     
