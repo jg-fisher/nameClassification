@@ -38,6 +38,7 @@ class Classifier(nn.Module):
         x = F.relu(x)
         x = self.h2(x)
         x = F.relu(x)
+        x = self.h3(x)
         x = F.softmax(x, dim=1)
         return x
 
