@@ -1,9 +1,5 @@
-#import keras
-#from keras.layers import Dense
-#from keras.models import Sequential
-
 from sklearn.preprocessing import OneHotEncoder
-#from sklearn.utils import shuffle
+from sklearn.utils import shuffle
 
 # get the length of the longest name
 def characterize():
@@ -25,14 +21,16 @@ def characterize():
             return char_set, labels, longest
 
 
-if __name__ == '__main__':
+def process_data():
+    """
+    Preprocesses data. Returns X input array, Y output classification, and output classificaton dict.
+    """
 
     char_set, labels, _ = characterize()
 
     # dictionaries for conversions
     char_to_int = {c:i for i, c in enumerate(sorted(char_set))}
     label_to_class = {l:c for c, l in enumerate(labels)}
-    print(label_to_class)
 
     # network input and output
     X = []
@@ -56,4 +54,9 @@ if __name__ == '__main__':
         for int_value in word:
             ohe[index][int_value] = 1
 
+    # shuffle data
+    X, Y = shuffle(X, Y, random_state=0)
     
+    return X, Y, label_to_class
+
+process_data() 
