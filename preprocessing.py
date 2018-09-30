@@ -49,6 +49,7 @@ def process_data():
             Y.append(yi)
 
     # one hot encoding names
+    # TODO: THIS IS BROKEN.
     ohe = [[0] * len(char_set) for xi in range(len(X))]
     for index, word in enumerate(X):
         for int_value in word:
